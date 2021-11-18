@@ -1,5 +1,5 @@
 import { BrightnessOptions } from './fireworks'
-import { randomFloat, randomInt } from './helpers'
+import { randomFloat, randomInt, hsla } from './helpers'
 
 interface ExplosionOptions {
   x: number
@@ -10,6 +10,7 @@ interface ExplosionOptions {
   gravity: number
   explosionLength: number
   brightness: Required<BrightnessOptions>
+  exp: boolean
 }
 
 export class Explosion {
@@ -27,22 +28,25 @@ export class Explosion {
   private _brightness: number
   private _decay: number
   private _alpha = 1
+  private _exp: boolean
 
   constructor({
     x,
     y,
     ctx,
     hue,
-    friction,
+    exp,
     gravity,
-    explosionLength,
-    brightness
+    friction,
+    brightness,
+    explosionLength
   }: ExplosionOptions) {
     this._x = x
     this._y = y
+    this._exp = exp
     this._ctx = ctx
-    this._friction = friction
     this._gravity = gravity
+    this._friction = friction
     this._explosionLength = explosionLength
 
     while (this._explosionLength--) {
@@ -70,14 +74,26 @@ export class Explosion {
   }
 
   draw(): void {
-    const last = this._coordinates.length - 1
+    const lastIndex = this._coordinates.length - 1
 
     this._ctx.beginPath()
+
     // experimental
-    // this._ctx.arc(this._x, this._y, 1, 0, Math.PI * 2)
-    this._ctx.moveTo(this._coordinates[last][0], this._coordinates[last][1])
+    if (this._exp) {
+      this._ctx.arc(
+        this._x,
+        this._y,
+        randomFloat(0.5, 1.5),
+        0,
+        Math.PI * 2
+      )
+      this._ctx.fill()
+    }
+
+    this._ctx.fillStyle = hsla(this._hue, this._brightness, this._alpha)
+    this._ctx.moveTo(this._coordinates[lastIndex][0], this._coordinates[lastIndex][1])
     this._ctx.lineTo(this._x, this._y)
-    this._ctx.strokeStyle = `hsla(${this._hue}, 100%, ${this._brightness}%, ${this._alpha})`
+    this._ctx.strokeStyle = hsla(this._hue, this._brightness, this._alpha)
     this._ctx.stroke()
   }
 }

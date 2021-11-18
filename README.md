@@ -1,27 +1,45 @@
-<br/>
+<br>
 <p align="center">
-    <img src="https://fireworks.js.org/images/fireworks_emoji.png" />
+  <a href="https://fireworks.js.org">
+    <img height="240" src="https://fireworks.js.org/images/fireworks_emoji.gif"/>
+    <br/>
+    <h1 align="center">fireworks-js</h1>
+  </a>
 </p>
 
-<p align="center"><b>Fireworks.js</b></p>
-<p align="center">A simple fireworks library!</p>
-
-<br/>
 <p align="center">
+  <b>A simple fireworks library! | <a href="https://fireworks.js.org">fireworks.js.org</a></b>
+</p>
+
+<p align="center">
+  <a href="https://github.com/crashmax-dev/fireworks-js/actions">
     <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/crashmax-dev/fireworks-js/github-pages">
-    <a href="https://www.npmjs.com/package/fireworks-js" target="_blank"><img alt="npm" src="https://img.shields.io/npm/v/fireworks-js"></a>
+  </a>
+  <a href="https://www.npmjs.com/package/fireworks-js">
+    <img alt="npm" src="https://img.shields.io/npm/v/fireworks-js">
+  </a>
+  <a href="https://www.npmjs.com/package/fireworks-js">
     <img alt="npm" src="https://img.shields.io/npm/dt/fireworks-js?color=blue">
-    <a href="https://bundlephobia.com/package/fireworks-js@latest"><img alt="npm bundle size" src="https://badgen.net/bundlephobia/minzip/fireworks-js"></a>
-    <a href="https://www.codefactor.io/repository/github/crashmax-dev/fireworks-js"><img src="https://www.codefactor.io/repository/github/crashmax-dev/fireworks-js/badge" alt="CodeFactor" /></a>
+  </a>
+  <a href="https://bundlephobia.com/package/fireworks-js@latest">
+    <img alt="npm bundle size" src="https://badgen.net/bundlephobia/minzip/fireworks-js">
+  </a>
+  <a href="https://www.codefactor.io/repository/github/crashmax-dev/fireworks-js">
+    <img alt="CodeFactor Grade" src="https://img.shields.io/codefactor/grade/github/crashmax-dev/fireworks-js">
+  </a>
+</p>
+
+<p align="center">
+  <a href="#features">Features</a> | <a href="#demo">Demo</a> | <a href="#installation">Installation</a> | <a href="#usage">Usage</a> | <a href="#options">Options</a>
 </p>
 
 ## Features
 
- - 🔥 Zero [dependencies](https://www.npmjs.com/package/fireworks-js?activeTab=dependents).
- - ⚙️ Flexible [configuration](#options).
+ - 🔥 Zero [dependencies](https://www.npmjs.com/package/fireworks-js?activeTab=dependents)
+ - ⚙️ Flexible [configuration](#options)
  - 📦 Lightweight ([~3.0kB gizpped](https://bundlephobia.com/package/fireworks-js))
- - ☁️ [Server-side rendering](#server-side-rendering-with-no-ssr) compatibility. 
- - 📜 Supports [TypeScript](https://www.typescriptlang.org) type definition.
+ - ☁️ [Server-side rendering](#server-side-rendering-with-no-ssr) compatibility
+ - 📜 Supports [TypeScript](https://www.typescriptlang.org) type definition
 
 ## Demo
 
@@ -44,6 +62,7 @@ yarn add fireworks-js
 
 ## Usage
 
+If you are using a module bundler like Webpack or Rollup, etc.., import `fireworks-js` into your project:
 <!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./.github/markdown-autodocs/usage.js) -->
 <!-- The below code snippet is automatically added from ./.github/markdown-autodocs/usage.js -->
 ```js
@@ -64,16 +83,20 @@ fireworks.setOptions({ delay: { min: 10, max: 15 }})
 ```
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
-## CDN
+## Using the CDN
 
 <!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./.github/markdown-autodocs/usage-cdn.html) -->
 <!-- The below code snippet is automatically added from ./.github/markdown-autodocs/usage-cdn.html -->
 ```html
+<!-- jsdelivr  -->
+<script src="https://cdn.jsdelivr.net/npm/fireworks-js@latest/dist/fireworks.js"></script>
+
+<!-- unpkg -->
 <script src="https://unpkg.com/fireworks-js@latest/dist/fireworks.js"></script>
 ```
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
-## Usage in React (see detailed usage [here](examples/react.tsx))
+## Usage in React (with hook [useFireworks](examples/react.tsx))
 
 <!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./.github/markdown-autodocs/usage-react.js) -->
 <!-- The below code snippet is automatically added from ./.github/markdown-autodocs/usage-react.js -->
@@ -101,8 +124,8 @@ export const App = () => {
 
 ## Server-Side Rendering ([with-no-ssr](https://nextjs.org/docs/advanced-features/dynamic-import#with-no-ssr))
 
-<!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./.github/markdown-autodocs/ssr-next.js) -->
-<!-- The below code snippet is automatically added from ./.github/markdown-autodocs/ssr-next.js -->
+<!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./.github/markdown-autodocs/usage-ssr.js) -->
+<!-- The below code snippet is automatically added from ./.github/markdown-autodocs/usage-ssr.js -->
 ```js
 // components/Fireworks.tsx
 import { Fireworks } from 'fireworks-js/dist/react'
@@ -144,4 +167,4 @@ const FireworksWithNoSSR = dynamic(
 <!-- MARKDOWN-AUTO-DOCS:END -->
 
 ## License
-MIT License © 2021 [Vitalij Ryndin](https://github.com/crashmax-deb)
+MIT License © 2021 [Vitalij Ryndin](https://github.com/crashmax-dev)
