@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/crashmax-dev/fireworks-js.git"
+    "url": "git+https://github.com/cooperwalter/fireworks-js.git"
   },
   "keywords": [
     "canvas",
